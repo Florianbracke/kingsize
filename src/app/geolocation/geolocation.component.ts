@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./geolocation.component.css']
 })
 export class GeolocationComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +18,8 @@ export class GeolocationComponent implements OnInit {
     navigator.geolocation.getCurrentPosition((position) => {
       console.log(`lat: ${position.coords.latitude}, lon" ${position.coords.longitude}`) 
     })
+
+    
   }
    
 }
