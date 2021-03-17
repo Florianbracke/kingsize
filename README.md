@@ -2,10 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
-# KingSize
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
-
 ## Goal
 It is a dog-eat-dog world. 
 But luckily we can now atleast give the poor doggos some more walks in the parks! 
