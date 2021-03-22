@@ -1,0 +1,15 @@
+.homeContainer {
+    margin: 0;
+    padding: 0;
+    background-color: #f5ece0;
+}
+
+img {
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+}
+

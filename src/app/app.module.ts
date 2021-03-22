@@ -10,6 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
+import { RippleComponent } from './ripple/ripple.component';
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { HomepageComponent } from './homepage/homepage.component';
+
+//Material components
+import { MatRippleModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -17,6 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     GeolocationComponent,
     HeaderComponent,
+    RippleComponent,
+    HomepageComponent,
     
   ],
  
@@ -24,9 +35,15 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatRippleModule,
+    MatCheckboxModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
