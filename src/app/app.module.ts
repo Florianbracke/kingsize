@@ -16,6 +16,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
+import { MatchesComponent } from './matches/matches.component';
+import { SettingsComponent } from './settings/settings.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -25,6 +30,11 @@ import {MatIconModule} from '@angular/material/icon';
     HeaderComponent,
     RippleComponent,
     HomepageComponent,
+    AboutusComponent,
+    LoginComponent,
+    MatchesComponent,
+    SettingsComponent,
+    LogoutComponent,
     
   ],
  
