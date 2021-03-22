@@ -9,13 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RippleComponent } from './ripple/ripple.component';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HomepageComponent } from './homepage/homepage.component';
 //Material components
 import { MatRippleModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { HomepageComponent } from './homepage/homepage.component';
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -25,7 +25,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     HeaderComponent,
     RippleComponent,
     HomepageComponent,
+    
   ],
+ 
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,6 +37,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
   ],
 
   providers: [],
