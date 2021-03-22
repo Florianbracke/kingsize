@@ -2,14 +2,14 @@
     margin: 0;
     padding: 0;
     background-color: #f5ece0;
+    height: 87vh;
 }
 
 img {
     display: block;
     padding-top: 50px;
-    padding-bottom: 80px;
     margin-left: auto;
     margin-right: auto;
-    height: 500px;
+    height: 60%;
 }
 
