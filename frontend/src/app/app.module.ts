@@ -24,7 +24,6 @@ import { MatchesComponent } from './matches/matches.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LogoutComponent } from './logout/logout.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -9,8 +9,8 @@ const routes: Routes = [
 
   { path: ''                , component: HomepageComponent},
   { path: 'Geolocation'     , component: GeolocationComponent},
-  { path: 'About-us', component: AboutusComponent},
-  { path: 'Login', component: LoginComponent},
+  { path: 'About-us'        , component: AboutusComponent},
+  { path: 'Login'           , component: LoginComponent},
 ];
 
 @NgModule({
