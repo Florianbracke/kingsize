@@ -11,6 +11,11 @@ import { RippleComponent } from './ripple/ripple.component';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
+import { MatchesComponent } from './matches/matches.component';
+import { SettingsComponent } from './settings/settings.component';
+import { LogoutComponent } from './logout/logout.component';
 
 //Material components
 import { MatRippleModule } from '@angular/material/core';
@@ -18,11 +23,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { AboutusComponent } from './aboutus/aboutus.component';
-import { LoginComponent } from './login/login.component';
-import { MatchesComponent } from './matches/matches.component';
-import { SettingsComponent } from './settings/settings.component';
-import { LogoutComponent } from './logout/logout.component';
+import { MatCardModule } from '@angular/material/card';
+
 
 
 @NgModule({
@@ -51,6 +53,7 @@ import { LogoutComponent } from './logout/logout.component';
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
   ],
 
   providers: [],
