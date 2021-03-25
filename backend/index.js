@@ -2,7 +2,11 @@ const express = require('express');
 
 const bodyParser = require('body-parser');//const { body } = require('express-validator');
 
+const authRoutes = require('./routes/auth');
+
 const app = express();
+
+const errorController = require('./controllers/error');
 
 const ports = process.env.PORT || 3305;
 
@@ -21,5 +25,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/auth', authRoutes);
+
+app.use(errorController.get404);
+
+app.use(errorController.get500);
 
 app.listen(ports, ()=> console.log(`Listening on port ${ports}`));
