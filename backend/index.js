@@ -4,9 +4,16 @@ const bodyParser = require('body-parser');//const { body } = require('express-va
 
 const app = express();
 
-const ports = process.env.PORT || 3000;
+const ports = process.env.PORT || 3305;
 
-app.use(bodyParser.json()); //https://stackoverflow.com/questions/24330014/bodyparser-is-deprecated-express-4
+
+//https://stackoverflow.com/questions/24330014/bodyparser-is-deprecated-express-4
+
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
+
 app.use((req, res, next) => {
     res.setHeader('Acces-Control-Allow-Origin', '*');
     res.setHeader('Acces-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
