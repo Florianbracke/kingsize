@@ -17,7 +17,9 @@ app.listen(8000, () => {
 
 //getting one specific object from an endpoint
 
+
 app.route('api/dogs/').get((req,res) => {
+    console.log("dsk")
     res.send({
         dogs: [{name: 'charlie'}, {name: 'lilly'}],
     })
