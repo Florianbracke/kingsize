@@ -8,9 +8,10 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 import { RippleComponent } from './ripple/ripple.component';
 import { FormsModule } from '@angular/forms'; 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'; 
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
@@ -25,7 +26,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatCardModule,
     HttpClientModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule
   ],
 
   providers: [],

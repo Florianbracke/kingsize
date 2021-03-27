@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'Geolocation'     , component: GeolocationComponent},
   { path: 'About-us'        , component: AboutusComponent},
   { path: 'Login'           , component: LoginComponent},
-];
+  
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
