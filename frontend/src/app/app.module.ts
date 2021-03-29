@@ -28,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { HeaderloginComponent } from './headerlogin/headerlogin.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { HeaderloginComponent } from './headerlogin/headerlogin.component';
     SettingsComponent,
     LogoutComponent,
     HeaderloginComponent,
+    PageNotFoundComponent,
    
   ],
  
