@@ -1,6 +1,10 @@
 
-<app-header></app-header>
+<div *ngIf="!loggedIn">
+    <app-header></app-header>
+</div>
 
-
+<div *ngIf="loggedIn">
+    <app-headerlogin></app-headerlogin>
+</div>
 
 <router-outlet></router-outlet>

@@ -29,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { HeaderloginComponent } from './headerlogin/headerlogin.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatchesComponent,
     SettingsComponent,
     LogoutComponent,
+    HeaderloginComponent,
     
   ],
  

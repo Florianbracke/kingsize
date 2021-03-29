@@ -4,7 +4,7 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import {AboutusComponent} from './aboutus/aboutus.component';
 import {LoginComponent} from './login/login.component'
-import { LogoutComponent } from './logout/logout.component';
+import { MatchesComponent } from './matches/matches.component';
 
 const routes: Routes = [
 
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'Geolocation'     , component: GeolocationComponent},
   { path: 'About-us'        , component: AboutusComponent},
   { path: 'Login'           , component: LoginComponent},
-  { path: 'Logout'          , component: LogoutComponent},
+  { path: 'Matches'         , component: MatchesComponent},
   
   ];
 
@@ -21,4 +21,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
