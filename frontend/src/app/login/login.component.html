@@ -16,7 +16,7 @@
                         <input matInput> <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
                     
-                <button mat-raised-button color="primary">sign-in</button>
+                <button mat-raised-button color="primary" (click)="onSubmit()" routerLink="/">sign-in</button>
 
             </div>
         </div>
@@ -31,16 +31,16 @@
         <div class="formcontainer">
             <div class="formfields">
 
-                <form [formGroup]='profileForm' (ngSubmit)="onSubmit()">
+                <form (ngSubmit)="onSubmit()">
 
                     <mat-form-field appearance="fill" required>
                         <mat-label>Fill in email</mat-label>
-                        <input matInput formControlName='email' > <mat-icon matSuffix>email</mat-icon> 
+                        <input matInput> <mat-icon matSuffix>email</mat-icon> 
                     </mat-form-field>
 
                     <mat-form-field appearance="fill" required>
                         <mat-label>Fill in password</mat-label>
-                        <input matInput formControlName='password'> <mat-icon matSuffix>lock</mat-icon>
+                        <input matInput > <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
 <!--                     
                     <mat-form-field appearance="fill">
@@ -49,7 +49,7 @@
                     </mat-form-field> -->
 
                     <br><br><label>Are you a dog owner or dog walker?: </label><br>
-                    <mat-radio-group formControlName="dog" >
+                    <mat-radio-group  >
                         <mat-radio-button value="walker">dog walker</mat-radio-button><br>
                         <mat-radio-button value="owner">dog owner</mat-radio-button>
                     </mat-radio-group>
