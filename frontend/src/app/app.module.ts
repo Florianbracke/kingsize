@@ -4,16 +4,14 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GeolocationComponent } from './geolocation/geolocation.component';
+
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-import { RippleComponent } from './ripple/ripple.component';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { HomepageComponent } from './homepage/homepage.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
+
 import { LoginComponent } from './login/login.component';
 import { MatchesComponent } from './matches/matches.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -31,20 +29,19 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { HeaderloginComponent } from './headerlogin/headerlogin.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    GeolocationComponent,
     HeaderComponent,
-    RippleComponent,
     HomepageComponent,
-    AboutusComponent,
+    
     LoginComponent,
     MatchesComponent,
     SettingsComponent,
     LogoutComponent,
     HeaderloginComponent,
-    
+   
   ],
  
   imports: [

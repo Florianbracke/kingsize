@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
+
 
 
 //TODO: change color of header login icon to green-> [ngStyle]="{'color':'lightgreen'}" (add that line to mat-icon after clickevent)
@@ -7,7 +8,8 @@ import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  
 })
 
 export class LoginComponent implements OnInit {
@@ -33,7 +35,8 @@ ngOnInit() {
 onSubmit() {
   // console.log(this.profileForm);
   // console.log(this.profileForm.get(‘email’).value);
- 
+
+
   }
  
  

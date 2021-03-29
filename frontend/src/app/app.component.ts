@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,18 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'king-size';
 
-  
+
   // change this variable to "log-in" and change header etc etc
-  auth = true;
+  auth =false ;
 
   loggedIn = false;
 
   constructor () {
-    
   }
   
   ngOnInit() {
-
     
       if (this.auth === true) {
         this.loggedIn = true;
@@ -28,7 +27,7 @@ export class AppComponent implements OnInit {
         console.log(this.auth)
         console.log(this.loggedIn)
       }
-      
+        
   }
 
 }
