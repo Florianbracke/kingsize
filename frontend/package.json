@@ -25,6 +25,7 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "material-design-icons": "^3.0.1",
+    "material-design-icons-iconfont": "^6.1.0",
     "mysql2": "^2.2.5",
     "node.js": "0.0.1-security",
     "okta": "^1.0.0",
