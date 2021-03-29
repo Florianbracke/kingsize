@@ -30,6 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { HeaderloginComponent } from './headerlogin/headerlogin.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { HeaderloginComponent } from './headerlogin/headerlogin.component';
     SettingsComponent,
     LogoutComponent,
     HeaderloginComponent,
+    ProfileComponent,
     
   ],
  
