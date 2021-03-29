@@ -1,1 +1,64 @@
-<p>login works!</p>
+
+<div class="container">
+   <div class="login">
+        <H1>SIGN-IN</H1> 
+        <hr class="horizontal-hr">
+        <div class="formcontainer">
+            <div class="formfields">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Fill in email</mat-label>
+                        <input matInput> <mat-icon matSuffix>email</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Fill in password</mat-label>
+                        <input matInput> <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+                    
+                <button mat-raised-button color="primary">sign-in</button>
+
+            </div>
+        </div>
+    </div>
+
+    <hr class="vertical">
+
+    <div class="signup">
+        <H1>SIGN-UP</H1> 
+        <hr class="horizontal-hr">
+        
+        <div class="formcontainer">
+            <div class="formfields">
+
+                <form [formGroup]='profileForm' (ngSubmit)="onSubmit()">
+
+                    <mat-form-field appearance="fill" required>
+                        <mat-label>Fill in email</mat-label>
+                        <input matInput formControlName='email' > <mat-icon matSuffix>email</mat-icon> 
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" required>
+                        <mat-label>Fill in password</mat-label>
+                        <input matInput formControlName='password'> <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+<!--                     
+                    <mat-form-field appearance="fill">
+                        <mat-label>confirm password</mat-label>
+                        <input matInput formControlName='confirmPassword'> <mat-icon matSuffix>password</mat-icon>
+                    </mat-form-field> -->
+
+                    <br><br><label>Are you a dog owner or dog walker?: </label><br>
+                    <mat-radio-group formControlName="dog" >
+                        <mat-radio-button value="walker">dog walker</mat-radio-button><br>
+                        <mat-radio-button value="owner">dog owner</mat-radio-button>
+                    </mat-radio-group>
+                    <br><br>
+                    <button mat-raised-button color="primary">sign-up</button>
+
+                </form> 
+
+            </div>
+        </div>
+</div>
+

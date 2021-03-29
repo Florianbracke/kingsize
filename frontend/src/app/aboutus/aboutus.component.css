@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     background-color: #f5ece0;
-    height: 87vh;
+    height: 85vh;
     padding-top: 1%;
     font-family: 'Roboto', sans-serif;
 }
@@ -11,7 +11,9 @@
     margin-top: 2%;
     margin-left: 15%;
     margin-right: 15%;
-    background-color: #fff6ea;
+    background-color: #fff6ea;  
+    /* #a8540573 ? */
+    
     color: rgb(95, 95, 95);
 }
 
