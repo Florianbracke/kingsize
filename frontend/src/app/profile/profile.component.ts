@@ -30,12 +30,5 @@ export class ProfileComponent implements OnInit {
     console.warn(this.profileForm.value);
   }
 
-  updateProfile() {
-    this.profileForm.patchValue({
-      firstName : 'Nancy',
-      adress : {
-        street : 'Dorpstraat',
-      },
-    });
-  }
+  
 }
