@@ -46,14 +46,10 @@ import { HeaderprofileComponent } from './header_components/headerprofile/header
     SettingsComponent,
     LogoutComponent,
     HeaderloginComponent,
-<<<<<<< HEAD
-    ProfileComponent,
-=======
     PageNotFoundComponent,
     HeadermatchesComponent,
     ProfileComponent,
     HeaderprofileComponent,
->>>>>>> abacfb856ff1f97db4ece7edfe486fea85a20e7d
     
    
   ],
