@@ -15,7 +15,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { MatchesComponent } from './matches/matches.component';
 import { SettingsComponent } from './settings/settings.component';
-import { LogoutComponent } from './logout/logout.component';
+
 
 //Material components
 import { MatRippleModule } from '@angular/material/core';
@@ -32,6 +32,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeadermatchesComponent } from './header_components/headermatches/headermatches.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HeaderprofileComponent } from './header_components/headerprofile/headerprofile.component';
+import { HeadersettingsComponent } from './header_components/headersettings/headersettings.component';
+
 
 
 
@@ -40,18 +42,16 @@ import { HeaderprofileComponent } from './header_components/headerprofile/header
     AppComponent,
     HeaderComponent,
     HomepageComponent,
-    
     LoginComponent,
     MatchesComponent,
     SettingsComponent,
-    LogoutComponent,
     HeaderloginComponent,
     PageNotFoundComponent,
     HeadermatchesComponent,
     ProfileComponent,
     HeaderprofileComponent,
+    HeadersettingsComponent,
     
-   
   ],
  
   imports: [
@@ -69,7 +69,8 @@ import { HeaderprofileComponent } from './header_components/headerprofile/header
     HttpClientModule,
     MatSelectModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    
   ],
 
   providers: [],
