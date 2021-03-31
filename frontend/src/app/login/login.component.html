@@ -16,7 +16,8 @@
                         <input matInput> <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
                     
-                <button mat-raised-button color="primary" (click)="onSubmit()" routerLink="/Matches">sign-in <mat-icon >check</mat-icon> </button>
+                <button mat-raised-button color="primary" (click)="onSubmit()" routerLink="/Matches">sign-in 
+                    <mat-icon [ngStyle]="{'color':'lightgreen'}">person_outline</mat-icon> </button>
 
             </div>
         </div>

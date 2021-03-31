@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component'
 import { MatchesComponent } from './matches/matches.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'Login'           , component: LoginComponent},
   { path: 'Matches'         , component: MatchesComponent},
   { path: 'Profile'         , component: ProfileComponent},
+  { path: 'Settings'         , component: SettingsComponent},
   { path: '**'              , component: PageNotFoundComponent },
   
   ];
