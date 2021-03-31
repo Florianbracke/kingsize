@@ -1,9 +1,25 @@
 
-<div *ngIf="!loggedIn">
+<div *ngIf="this.route == null">
     <app-header></app-header>
 </div>
 
-<div *ngIf="loggedIn">
+<div *ngIf="this.route == '/Login'">
+    <app-headerlogin></app-headerlogin>
+</div>
+
+<div *ngIf="this.route == '/Matches'">
+    <app-headermatches></app-headermatches>
+</div>
+
+<div *ngIf="this.route == '/Profile'">
+    <app-headerprofile></app-headerprofile>
+</div>
+
+<div *ngIf="this.route == '/Settings'">
+    <app-headerlogin></app-headerlogin>
+</div>
+
+<div *ngIf="this.route == '/Logout'">
     <app-headerlogin></app-headerlogin>
 </div>
 

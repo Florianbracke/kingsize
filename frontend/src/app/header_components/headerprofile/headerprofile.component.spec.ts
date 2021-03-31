@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeolocationComponent } from './geolocation.component';
+import { HeaderprofileComponent } from './headerprofile.component';
 
-describe('GeolocationComponent', () => {
-  let component: GeolocationComponent;
-  let fixture: ComponentFixture<GeolocationComponent>;
+describe('HeaderprofileComponent', () => {
+  let component: HeaderprofileComponent;
+  let fixture: ComponentFixture<HeaderprofileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GeolocationComponent ]
+      declarations: [ HeaderprofileComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GeolocationComponent);
+    fixture = TestBed.createComponent(HeaderprofileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

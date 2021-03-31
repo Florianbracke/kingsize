@@ -4,16 +4,14 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GeolocationComponent } from './geolocation/geolocation.component';
-import { HeaderComponent } from './header/header.component';
+
+import { HeaderComponent } from './header_components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-import { RippleComponent } from './ripple/ripple.component';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { HomepageComponent } from './homepage/homepage.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
+
 import { LoginComponent } from './login/login.component';
 import { MatchesComponent } from './matches/matches.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -29,24 +27,35 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
-import { HeaderloginComponent } from './headerlogin/headerlogin.component';
+import { HeaderloginComponent } from './header_components/headerlogin/headerlogin.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeadermatchesComponent } from './header_components/headermatches/headermatches.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HeaderprofileComponent } from './header_components/headerprofile/headerprofile.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    GeolocationComponent,
     HeaderComponent,
-    RippleComponent,
     HomepageComponent,
-    AboutusComponent,
+    
     LoginComponent,
     MatchesComponent,
     SettingsComponent,
     LogoutComponent,
     HeaderloginComponent,
+<<<<<<< HEAD
     ProfileComponent,
+=======
+    PageNotFoundComponent,
+    HeadermatchesComponent,
+    ProfileComponent,
+    HeaderprofileComponent,
+>>>>>>> abacfb856ff1f97db4ece7edfe486fea85a20e7d
     
+   
   ],
  
   imports: [

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RippleComponent } from './ripple.component';
+import { HeadermatchesComponent } from './headermatches.component';
 
-describe('RippleComponent', () => {
-  let component: RippleComponent;
-  let fixture: ComponentFixture<RippleComponent>;
+describe('HeadermatchesComponent', () => {
+  let component: HeadermatchesComponent;
+  let fixture: ComponentFixture<HeadermatchesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RippleComponent ]
+      declarations: [ HeadermatchesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RippleComponent);
+    fixture = TestBed.createComponent(HeadermatchesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
