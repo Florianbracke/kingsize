@@ -8,13 +8,6 @@
     justify-content: flex-end;
     
 }
-/* 
- hr{
-    background-color: #6A1B9A;
-    height: 1px;
-    margin: 0px;
-    padding: 0px;
-}  */
 
 button {
     line-height: 90%;
@@ -24,10 +17,4 @@ button {
     text-align:center;
     padding: 0px;
 
-}
-
-
-
-.cardheader {
-    text-align: center;
 }
