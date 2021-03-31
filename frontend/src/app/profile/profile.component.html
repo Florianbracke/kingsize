@@ -2,89 +2,95 @@
     <mat-card class="card">
         <mat-card-content class="content">
             <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-                <h2>Your Profile</h2>
-                <label>
-                    First name:
-                    <input type="text" formControlName="firstName" required>
-                </label>
-                <label>
-                    Last name:
-                    <input type="text" formControlName="lastName" required>
-                </label>
-
-                <div formGroupName="adress">
-                    <h3>Adress</h3>
-                  
-                    <label>
-                      Street:
-                      <input type="text" formControlName="street" required>
-                    </label>
-
-                    <label>
-                        Number:
-                        <input type="text" formControlName="number" required>
-                    </label>
-                  
-                    <label>
-                        Zip Code:
-                        <input type="text" formControlName="zipcode" required>
-                    </label>
-
-                    <label>
-                      City:
-                      <input type="text" formControlName="city" required>
-                    </label>
+                <div class="box">
+                    <div class="flexitem">
+                        <h2>Your Profile</h2>
+                        <label>
+                            First name:
+                            <input type="text" formControlName="firstName" required>
+                        </label>
+                        <label>
+                            Last name:
+                            <input type="text" formControlName="lastName" required>
+                        </label>
+        
+                        <div formGroupName="adress">
+                            <h3>Adress</h3>
+                          
+                            <label>
+                              Street:
+                              <input type="text" formControlName="street" required>
+                            </label>
+        
+                            <label>
+                                Number:
+                                <input type="text" formControlName="number" required>
+                            </label>
+                          
+                            <label>
+                                Zip Code:
+                                <input type="text" formControlName="zipcode" required>
+                            </label>
+        
+                            <label>
+                              City:
+                              <input type="text" formControlName="city" required>
+                            </label>
+                            
+                        </div>   
+    
                     
+                        <label>
+                            Are you a dog owner or a dog walker?<br>
+                            <input type="checkbox" formControlName="dogOwner" >Dog owner
+                            <input type="checkbox" formControlName="dogWalker" >Dog walker
+                        </label>
+                    
+                    </div>
+        
+                    <div class="flexitem" *ngIf="profileForm.get('dogOwner').value">
+                        <div formGroupName="dogProfile">
+                            <h2>Dog's profile</h2>
+                            <label>
+                                Breed:
+                                <input type="text" formControlName="dog">
+                            </label>
+                            <label>
+                                Name:
+                                <input type="text" formControlName="dogName">
+                            </label>
+                            <label>
+                                Age:
+                                <input type="text" formControlName="dogAge">
+                            </label>
+                            <label>
+                                Can your dog be around children?
+                                <input type="text" formControlName="children">
+                            </label>
+                            <label>
+                                Is your dog a good walker on the leash?
+                                <input type="text" formControlName="leash">
+                            </label>
+                        </div>
+                        
+                    </div>  
+    
+                    <div class="flexitem" *ngIf="profileForm.get('dogWalker').value">
+                        <div formGroupName="walkerProfile">
+                            <h2>With what kind of dog do you want to walk?</h2>
+                            <label>
+                                Breed:
+                                <input type="text" formControlName="breed">
+                            </label>
+                            <label>
+                                How much experience do you have with dogs?
+                                <input type="text" formControlName="experience">
+                            </label>
+                        </div>
+                        
+                    </div>  
+    
                 </div>
-
-                <label>
-                    Are you a dog owner or a dog walker?<br>
-                    <input type="checkbox" formControlName="dogOwner" >Dog owner
-                    <input type="checkbox" formControlName="dogWalker" >Dog walker
-                </label>
-
-                <div *ngIf="profileForm.get('dogOwner').value">
-                    <div formGroupName="dogProfile">
-                        <h3>Dog's profile</h3>
-                        <label>
-                            Breed:
-                            <input type="text" formControlName="dog">
-                        </label>
-                        <label>
-                            Name:
-                            <input type="text" formControlName="dogName">
-                        </label>
-                        <label>
-                            Age:
-                            <input type="text" formControlName="dogAge">
-                        </label>
-                        <label>
-                            Can your dog be around children?
-                            <input type="text" formControlName="children">
-                        </label>
-                        <label>
-                            Is your dog a good walker on the leash?
-                            <input type="text" formControlName="leash">
-                        </label>
-                    </div>
-                    
-                </div>  
-
-                <div *ngIf="profileForm.get('dogWalker').value">
-                    <div formGroupName="walkerProfile">
-                        <h3>With what kind of dog do you want to walk?</h3>
-                        <label>
-                            Breed:
-                            <input type="text" formControlName="breed">
-                        </label>
-                        <label>
-                            How much experience do you have with dogs?
-                            <input type="text" formControlName="experience">
-                        </label>
-                    </div>
-                    
-                </div>  
-                    
 
                 <button type="submit" [disabled]="!profileForm.valid">Submit</button>
             </form>
