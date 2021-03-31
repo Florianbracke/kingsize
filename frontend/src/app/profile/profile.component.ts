@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -9,13 +10,13 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 export class ProfileComponent implements OnInit {
 
   profileForm = this.fb.group({
-    firstName : [''],
-    lastName : [''],
+    firstName : ['', Validators.required],
+    lastName : ['', Validators.required],
     adress : this.fb.group({
-      street : [''],
-      number : [''],
-      zipcode : [''],
-      city : [''],
+      street : ['', Validators.required],
+      number : ['', Validators.required],
+      zipcode : ['', Validators.required],
+      city : ['', Validators.required],
     }),
   });
 
