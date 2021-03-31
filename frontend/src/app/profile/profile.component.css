@@ -17,6 +17,12 @@
     
     color: #6A1B9A;
 }
+
+.box {
+    display: flex;
+    flex-direction: row;
+    padding-top: 24px;
+}
   
 label {
     display: block;
