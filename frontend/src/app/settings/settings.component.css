@@ -1,0 +1,9 @@
+.container {
+    margin: 0;
+    padding: 0;
+    background-color: #f5ece0;
+    height: 100vh;
+    padding-top: 1%;
+    font-family: 'Roboto', sans-serif;
+
+}

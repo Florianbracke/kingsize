@@ -1,21 +1,27 @@
 <div class="headerContainer">
 
-  <div class="buttonDiv">
+   <div class="buttonDiv">
+        <button mat-flat-button color="primary" routerLink='/Logout'>
+            <mat-icon>information</mat-icon> About
+        </button> 
+    </div>
+        
+    <div class="buttonDiv">
         <button mat-flat-button color="primary" routerLink='/Profile'>
             <mat-icon>person</mat-icon> Profile
         </button>
     </div>   
-        
-    <div class="buttonDiv">
-        <button mat-flat-button color="primary" routerLink='/Settings'>
-            <mat-icon>settings</mat-icon> Settings
+  <div class="buttonDiv">
+        <button mat-flat-button color="primary" routerLink='/Matches'>
+            <mat-icon>people</mat-icon> Matches
         </button>
     </div>   
    
+    
     <div class="buttonDiv">
         <button mat-flat-button color="primary" routerLink='/'>
             <mat-icon [ngStyle]="{'color':'red'}">person_outline</mat-icon> Sign-out
         </button> 
     </div>
-
+        
 </div>

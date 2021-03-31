@@ -1,5 +1,5 @@
 
-<div *ngIf="this.route == null">
+<div *ngIf="this.route == ''">
     <app-header></app-header>
 </div>
 
@@ -16,7 +16,7 @@
 </div>
 
 <div *ngIf="this.route == '/Settings'">
-    <app-headerlogin></app-headerlogin>
+    <app-headersettings></app-headersettings>
 </div>
 
 <div *ngIf="this.route == '/Logout'">
