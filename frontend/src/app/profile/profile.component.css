@@ -1,0 +1,57 @@
+.container {
+    margin: 0;
+    padding: 0;
+    background-color: #f5ece0;
+    height: 100vh;
+    padding-top: 1%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #fff6ea;  
+    /* #a8540573 ? */
+    
+    color: #6A1B9A;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+  }
+  
+  label {
+    display: block;
+    width: 6em;
+    margin: .5em 0;
+    color: #607D8B;
+    font-weight: bold;
+  }
+  
+  input {
+    height: 2em;
+    font-size: 1em;
+    padding-left: .4em;
+  }
+  
+  button {
+    font-family: Arial, sans-serif;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  
+  button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }

@@ -1,1 +1,48 @@
-<p>profile works!</p>
+<div class="container">
+    <mat-card class="card">
+        <mat-card-header>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <label>
+                    First name:
+                    <input type="text" formControlName="firstName">
+                </label>
+                <label>
+                    Last name:
+                    <input type="text" formControlName="lastName">
+                </label>
+
+                <div formGroupName="adress">
+                    <h3>Adress</h3>
+                  
+                    <label>
+                      Street:
+                      <input type="text" formControlName="street">
+                    </label>
+
+                    <label>
+                        Number:
+                        <input type="text" formControlName="number">
+                    </label>
+                  
+                    <label>
+                        Zip Code:
+                        <input type="text" formControlName="zipcode">
+                    </label>
+
+                    <label>
+                      City:
+                      <input type="text" formControlName="city">
+                    </label>
+                    
+                  </div>
+
+                <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+            </form>
+
+            <p><button (click)="updateProfile()">Update profile</button></p>
+           
+        </mat-card-content>
+    </mat-card>
+</div>
