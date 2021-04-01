@@ -10,22 +10,22 @@ import { Validators } from '@angular/forms';
 export class ProfileComponent implements OnInit {
 
   profileForm = this.fb.group({
-    firstName : ['', Validators.required],
-    lastName : ['', Validators.required],
-    dogOwner : [false],
+    firstName : ['Fran', Validators.required],
+    lastName : ['Andries', Validators.required],
+    dogOwner : [true],
     dogWalker : [false],
     adress : this.fb.group({
-      street : ['', Validators.required],
-      number : ['', Validators.required],
-      zipcode : ['', Validators.required],
-      city : ['', Validators.required],
+      street : ['Oedelemse Steenweg', Validators.required],
+      number : ['56', Validators.required],
+      zipcode : ['8340', Validators.required],
+      city : ['Sijsele', Validators.required],
     }),
     dogProfile : this.fb.group({
-      dog : [''],
-      dogName : [''],
-      dogAge : [''],
-      children : [''],
-      leash : [''],
+      dog : ['German Shepard'],
+      dogName : ['Charlie'],
+      dogAge : ['6'],
+      children : ['Yes'],
+      leash : ['He will pull on the leash'],
     }),
     walkerProfile : this.fb.group({
       breed : [''],
