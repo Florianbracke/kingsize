@@ -33,6 +33,7 @@ import { HeadermatchesComponent } from './header_components/headermatches/header
 import { ProfileComponent } from './profile/profile.component';
 import { HeaderprofileComponent } from './header_components/headerprofile/headerprofile.component';
 import { HeadersettingsComponent } from './header_components/headersettings/headersettings.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -51,6 +52,7 @@ import { HeadersettingsComponent } from './header_components/headersettings/head
     ProfileComponent,
     HeaderprofileComponent,
     HeadersettingsComponent,
+    AboutUsComponent,
     
   ],
  
@@ -70,6 +72,7 @@ import { HeadersettingsComponent } from './header_components/headersettings/head
     MatSelectModule,
     MatInputModule,
     MatRadioModule,
+
     
   ],
 

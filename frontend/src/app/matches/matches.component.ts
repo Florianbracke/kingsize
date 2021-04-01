@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { loremIpsum } from "lorem-ipsum";
 // const loremIpsum = require("lorem-ipsum").loremIpsum;
+import { MatDialog } from '@angular/material/dialog';
+
 
 
 
@@ -10,44 +12,41 @@ import { loremIpsum } from "lorem-ipsum";
   styleUrls: ['./matches.component.css']
 })
 export class MatchesComponent {
-   name='';
-   location:string;
-   imageSource:string;
-   description:string;
-   number:number=0
+  
+   location:string = "ghent";
+   description:string = loremIpsum();
+   number:number = 1;
    
    //link this variable to database with pictures of the cute dogs and cute people that registered
    numberArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
    namesArray = ["Garlead bric", "Tomice Juato", "Spron Ioning", "Lav Ender", "Ber Cucum", "Mary Rose"]
-   
+   imageSource:string = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
+   name=this.namesArray[this.number];
+
  next(){
-  console.log("111111Asd")
-  this.location="Ghent";
+
   this.number++;
-  this.imageSource = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
+
+  this.description=loremIpsum();;
+
   this.name=this.namesArray[this.number];
-  this.description='';
+  this.imageSource = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
  }
 
  previous(){
-  this.location="Ghent";
-  console.log("2222Asd")
-  this.number--;
-  this.imageSource = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
-  this.name=this.namesArray[this.number];
-  this.description='';
 
+  this.number--;
+
+  this.description=loremIpsum();;
+  this.name=this.namesArray[this.number];
+  this.imageSource = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
  }
  
 connect(){
-
-
-  return this.description = loremIpsum();
-  
+   
 }
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
 }
+

@@ -12,43 +12,41 @@
 }
 
 .matchingSystem {
-   display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-   justify-content: flex-end;
-   align-items: center  ;
+    justify-content: flex-start;
+    align-items: center;
 
-    width: 50%;
-    height: 80%; 
+    width: 40%;
+    height: 70%; 
    
     background-color: #fff6ea;  
     color:#6A1B9A;
-    
-    
+
 }
 
 
 mat-card-title {
     color:#6A1B9A;
+    margin-top: 15%;
 }
 
 mat-card-subtitle {
     color:#7f38aa;
 }
 
-mat-card-header {
-    display: block;
-
-    
-}
 
 mat-card-content {
-    margin-bottom: 25%;
+    margin-bottom: 5%;
+    margin-top: 5%;
     display: flex;
-    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
     min-width: 40%;
     min-height: 30%;
 }
+
 button {
     background-color: rgb(201, 201, 201);
 }
