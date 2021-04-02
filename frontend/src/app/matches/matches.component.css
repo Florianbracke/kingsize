@@ -1,29 +1,50 @@
 .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin: 0;
     padding: 0;
     background-color: #f5ece0;
     height: 100vh;
     padding-top: 1%;
     font-family: 'Roboto', sans-serif;
+
 }
 
-.card {
-    /* max-width: 400px; */
-    margin-top: 2%;
-    margin-left: 35%;
-    margin-right: 35%;
+.matchingSystem {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 40%;
+    height: 70%; 
+   
     background-color: #fff6ea;  
-    /* #a8540573 ? */
-    
-    color: rgb(95, 95, 95);
+    color:#6A1B9A;
+
 }
+
 
 mat-card-title {
     color:#6A1B9A;
+    margin-top: 15%;
 }
 
 mat-card-subtitle {
     color:#7f38aa;
+}
+
+
+mat-card-content {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;    
+    flex-direction: column;
+    min-width: 40%;
+    min-height: 30%;
 }
 
 button {
@@ -35,11 +56,9 @@ button:hover {
 }
 
 img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     max-width: 80%;
     height: auto;
+    
 }
 
 @media only screen and (max-width: 800px) {
