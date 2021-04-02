@@ -33,6 +33,7 @@ import { HeadermatchesComponent } from './header_components/headermatches/header
 import { ProfileComponent } from './profile/profile.component';
 import { HeaderprofileComponent } from './header_components/headerprofile/headerprofile.component';
 import { HeadersettingsComponent } from './header_components/headersettings/headersettings.component';
+import { ChatInboxComponent } from './chat-inbox/chat-inbox.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
 
@@ -52,6 +53,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ProfileComponent,
     HeaderprofileComponent,
     HeadersettingsComponent,
+    ChatInboxComponent,
     AboutUsComponent,
     
   ],
