@@ -1,6 +1,11 @@
 var app = require('express')();
 var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+var io = require('socket.io')(http, {
+    cors: {
+      origin: "https://localhost:4200",
+      methods: ["GET", "POST"]
+    }
+  });
 
 app.get('/', (req, res) => res.send('hello!'));
 
