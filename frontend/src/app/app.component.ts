@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   route: string;
 
-  constructor (location: Location, router: Router) {
+  constructor ( location: Location, router: Router) {
 
     router.events.subscribe(value => {
 

@@ -35,6 +35,9 @@ import { HeaderprofileComponent } from './header_components/headerprofile/header
 import { HeadersettingsComponent } from './header_components/headersettings/headersettings.component';
 import { ChatInboxComponent } from './chat-inbox/chat-inbox.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { MatSliderModule } from '@angular/material/slider';
+  
+
 
 
 
@@ -55,7 +58,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HeadersettingsComponent,
     ChatInboxComponent,
     AboutUsComponent,
-    
   ],
  
   imports: [
@@ -74,8 +76,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     MatSelectModule,
     MatInputModule,
     MatRadioModule,
-
-    
+    MatSliderModule
   ],
 
   providers: [],

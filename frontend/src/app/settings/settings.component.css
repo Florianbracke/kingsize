@@ -1,4 +1,4 @@
-.container {
+.containerSettings {
     margin: 0;
     padding: 0;
     background-color: #f5ece0;
@@ -6,4 +6,31 @@
     padding-top: 1%;
     font-family: 'Roboto', sans-serif;
 
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.settingsOptions {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(219, 214, 214);
+    width: 70%;
+    height: 80%;
+}
+
+
+.settings{
+    width: 70%;
+    
+}
+
+mat-slider{
+
+    
 }
