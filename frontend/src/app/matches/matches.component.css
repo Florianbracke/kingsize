@@ -1,70 +1,66 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 15% 15% 15% 15% 15% 15%;
+    gap: 0px 0px;
+    grid-template-areas:
+      "leftBanner userInfo  userInfo userInfo rightBanner"
+      "leftBanner userImage userImage userImage rightBanner"
+      "leftBanner userImage userImage userImage rightBanner"
+      "leftBanner userImage userImage userImage rightBanner"
+      "leftBanner userDescription userDescription userDescription rightBanner"
+      "leftBanner userButtons userButtons userButtons rightBanner";
+
     margin: 0;
     padding: 0;
+
     background-color: #f5ece0;
     height: 100vh;
     padding-top: 1%;
-    font-family: 'Roboto', sans-serif;
-
+    
+}
+.leftBanner{
+    grid-area: leftBanner;
 }
 
-.matchingSystem {
+.rightBanner{
+    grid-area: rightBanner;
+}
+.userImage {
+     grid-area: userImage;
+    
+    }
+
+.userInfo { 
+    grid-area: userInfo; 
+    background-color: rgb(206, 180, 180);
     display: flex;
-    flex-direction: column;
-
-    justify-content: flex-start;
-    align-items: center;
-
-    width: 40%;
-    height: 70%; 
    
-    background-color: #fff6ea;  
-    color:#6A1B9A;
-
-}
-
-
-mat-card-title {
-    color:#6A1B9A;
-    margin-top: 15%;
-}
-
-mat-card-subtitle {
-    color:#7f38aa;
-}
-
-
-mat-card-content {
-    margin-bottom: 5%;
-    margin-top: 5%;
-    display: flex;
-    align-items: center;    
-    flex-direction: column;
-    min-width: 40%;
-    min-height: 30%;
-}
-
-button {
-    background-color: rgb(201, 201, 201);
-}
-
-button:hover {
-    background-color: rgba(201, 201, 201, 0.438);
-}
-
-img {
-    max-width: 80%;
-    height: auto;
+    align-items:center;
     
 }
 
-@media only screen and (max-width: 800px) {
+.userDescription { 
+    grid-area: userDescription; 
+    
+}
 
-    img {
-        max-width: 100%;
-    }
+.userButtons { 
+    grid-area: userButtons; 
+  
+}
 
-  }
+.userProfileImage {
+    object-fit: contain;
+}
+
+.description{
+    color:black;
+    max-width: 80%; 
+    text-align: left;
+}
+img{
+     width: 100%;
+  
+}
+

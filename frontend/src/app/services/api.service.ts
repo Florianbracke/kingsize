@@ -23,7 +23,7 @@ export class ApiService {
     updateData(): Observable<user> {
       return this.http.get<user>(this._url);
     }
-
+    
 
     
 }
