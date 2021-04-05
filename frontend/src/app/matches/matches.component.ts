@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { loremIpsum } from "lorem-ipsum";
 // const loremIpsum = require("lorem-ipsum").loremIpsum;
 import { MatDialog } from '@angular/material/dialog';
+import { ApiService } from '../services/api.service';
+import { GeolocationService } from '../services/geolocation.service';
 
 
 
@@ -11,10 +13,15 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './matches.component.html',
   styleUrls: ['./matches.component.css']
 })
+
+
+
 export class MatchesComponent {
   
+
+  
    location:string = "ghent";
-   description:string = loremIpsum();
+   
    number:number = 1;
    
    //link this variable to database with pictures of the cute dogs and cute people that registered
@@ -27,7 +34,7 @@ export class MatchesComponent {
 
   this.number++;
 
-  this.description=loremIpsum();;
+  
 
   this.name=this.namesArray[this.number];
   this.imageSource = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
@@ -37,16 +44,36 @@ export class MatchesComponent {
 
   this.number--;
 
-  this.description=loremIpsum();;
+  
   this.name=this.namesArray[this.number];
   this.imageSource = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
  }
- 
+ title: string = "testtt"
 connect(){
    
 }
+  public users = [];
+  
+  constructor(private apiService: ApiService, private geolocationService: GeolocationService) {}
 
-  constructor() {}
+  
+  ngOnInit() {
+
+  const myObserver = {
+    next: x => console.log('Observer got a next value: ' + x[1].first_name),
+    error: err => console.error('Observer got an error: ' + err),
+    complete: () => console.log('Observer got a complete notification'),
+
+
+
+  };
+
+  const myObservable = this.apiService.getData();
+  myObservable.subscribe(myObserver);
+    
+
+  }
+ 
+  
 
 }
-

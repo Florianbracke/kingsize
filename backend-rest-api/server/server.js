@@ -12,12 +12,12 @@ const pool= mysql.createPool({
     port            :   '3307'
 })
 
-// var corsOptions = {
-//   origin: true,
-//   methods: ["GET","POST"],
-//   credentials: true,
-//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
-// }
+ let corsOptions = {
+   origin: true,
+   methods: ["GET","POST"],
+   credentials: true,
+   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+ }
 
 app.use(express.json());
 
@@ -25,20 +25,20 @@ app.use(express.urlencoded({
       extended: true
 }));
   
-// app.use((req, res, next) => {
-//     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3300");
-//     res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-//     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
-//     res.header(
-//         "Access-Control-Allow-Headers",
-//         "Origin, X-Requested-With, Content-Type, Accept"
-//     );
-//     next();
-// });
+ app.use((req, res, next) => {
+     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3300");
+     res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
+     res.header(
+         "Access-Control-Allow-Headers",
+         "Origin, X-Requested-With, Content-Type, Accept"
+     );
+     next();
+ });
 
-// app.use(cors(corsOptions))
+ app.use(cors(corsOptions))
 
-app.listen(5000, () => {
+app.listen(3000, () => {
     console.log('Server started!' )
   });
 
@@ -65,6 +65,31 @@ app.listen(5000, () => {
       })
   })
 
+  app.get('/login', (req, res) => { 
+    pool.getConnection((error,connection) => {
+
+        if (error) {
+            
+              throw error
+          }
+
+        connection.query("INSERT INTO user (`id`, `first_name`, `last_name`, `dog_owner`, `lat`, `lon`, `description`, `email`) VALUES ('9', 'Fran', 'Andries', '1', '50.232435', '3.433000', 'Charlie is a cute dog', 'franandries@gmail.com');", (error, rows) => {
+
+            connection.release()
+          
+            if (!error) {
+                res.send(rows)
+            } else {
+                console.log(error)
+            }
+            console.log('data are:', rows)
+            
+        })
+            
+        
+    })
+})
+ 
 // app.route('/api/dogs').get((req,res) => {
 //     res.send({
 //         dogs: [{name: 'charlie'}, {name: 'lilly'}],
