@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 
+
+
 const routes: Routes = [
 
   { path: ''                , component: HomepageComponent},
@@ -19,7 +21,6 @@ const routes: Routes = [
   { path: 'Chat'            , component: ChatInboxComponent},
   { path: 'About-us'        , component: AboutUsComponent},
   { path: '**'              , component: PageNotFoundComponent},
-  
   ];
 
 @NgModule({

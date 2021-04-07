@@ -105,3 +105,11 @@ form {
   .mat-radio-button {
     transform: scale(0.95);
 }
+
+.alert{
+    color:red;
+}
+
+.confirm{
+    color: green;
+}

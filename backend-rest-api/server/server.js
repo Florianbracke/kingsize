@@ -64,12 +64,8 @@ app.listen(3000, () => {
               console.log('data are:', rows)
               
           })
-          connection.release(function(err) {
-            if (err) {
-              return console.log('error:' + err.message);
-            }
-            console.log('Close the database connection.');
-          });
+         
+    
       })
 })
 

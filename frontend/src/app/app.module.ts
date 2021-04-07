@@ -36,6 +36,7 @@ import { HeadersettingsComponent } from './header_components/headersettings/head
 import { ChatInboxComponent } from './chat-inbox/chat-inbox.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { MatSliderModule } from '@angular/material/slider';
+
   
 
 
@@ -58,6 +59,7 @@ import { MatSliderModule } from '@angular/material/slider';
     HeadersettingsComponent,
     ChatInboxComponent,
     AboutUsComponent,
+  
   ],
  
   imports: [
