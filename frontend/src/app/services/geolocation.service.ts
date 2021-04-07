@@ -44,4 +44,10 @@ export class GeolocationService {
 // const B = lat2 * Math.PI/180;
 // const C = (lat2-position.coords.latitude) * Math.PI/180;
 // const D = (lon2-position.coords.longitude) * Math.PI/180;
+
+// Haversine formula !!
+
+
+
+
 // })

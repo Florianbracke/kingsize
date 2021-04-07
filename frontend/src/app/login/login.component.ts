@@ -1,44 +1,56 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
+import { ApiService } from '../services/api.service';
+import { GeolocationService } from '../services/geolocation.service';
 
-
-//TODO: change color of header login icon to green-> [ngStyle]="{'color':'lightgreen'}" (add that line to mat-icon after clickevent)
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   
-// profileForm: FormGroup;  //turned off TSconfig --strict false for this
-constructor () {
+  email_signUp:string;
+  password_signUp:string;
+
+  email: string ='';
+  password:string ='';
   
-}
+  signInForm = this.fb.group({
+    email : ['', Validators.required],
+    password : ['', Validators.required],
+    })
 
+  signUpForm = this.fb.group({
+    email_signUp : ['', Validators.required],
+    password_signUp : ['', Validators.required],
+    })
 
-
-ngOnInit() {
-  // this.profileForm = new FormGroup({
-   
-  //   email: new FormControl(null),
-  //   password: new FormControl(null),
-  //   dog: new FormControl('walker'),
-    
-  // });
+constructor (private fb: FormBuilder,private apiService: ApiService) {
   
 }
 
 onSubmit() {
-  // console.log(this.profileForm);
-  // console.log(this.profileForm.get(‘email’).value);
+  //Use EventEmitter with form value
+   console.warn(this.signUpForm.value);
+   //console.warn(this.signInForm.value);
+}
 
+newAccount() {
 
-  }
- 
+ return this.apiService.NewUserProfileData().subscribe(data => {
+console.log(data)
+    // this.email_signUp= data.email;
+
+    // this.password_signUp= data.password;
+
+  })
+}
+
  
   
 

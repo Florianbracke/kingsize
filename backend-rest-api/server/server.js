@@ -42,7 +42,7 @@ app.listen(3000, () => {
     console.log('Server started!' )
   });
 
-  app.get('', (req, res) => { 
+  app.get('/', (req, res) => { 
       pool.getConnection((error,connection) => {
 
           if (error) {
@@ -65,28 +65,35 @@ app.listen(3000, () => {
       })
   })
 
-  app.get('/login', (req, res) => { 
+
+ 
+
+  app.post('/login', (req, res) => { 
+
     pool.getConnection((error,connection) => {
 
-        if (error) {
-            
-              throw error
-          }
+        if (error) {throw error}
 
-        connection.query("INSERT INTO user (`id`, `first_name`, `last_name`, `dog_owner`, `lat`, `lon`, `description`, `email`) VALUES ('9', 'Fran', 'Andries', '1', '50.232435', '3.433000', 'Charlie is a cute dog', 'franandries@gmail.com');", (error, rows) => {
-
-            connection.release()
-          
-            if (!error) {
-                res.send(rows)
-            } else {
-                console.log(error)
-            }
-            console.log('data are:', rows)
-            
-        })
-            
+        //const id = req.body.id;
+        //   const first_name = req.body.first_name;
+        //   const last_name = req.body.last_name;
+        //   const dog_owner = req.body.dog_owner;
+        //   const lat = req.body.lat;
+        //   const lon = req.body.lon;
+        //const email = req.body.email_signUp;
+        //const password = req.body.password_signUp;
         
+        connection.query("INSERT INTO user ( `email`, `password`) VALUES ( 'qwe123', '123');", (error, data) => {
+
+        connection.release()
+        if (!error) {
+            res.send(data)
+        } else {
+            console.log(error)
+        }
+        console.log(data)
+
+        })
     })
 })
  

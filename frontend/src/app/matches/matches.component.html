@@ -3,8 +3,10 @@
     <div class="leftBanner"></div>
 
     <div class="userInfo">
-        <p class="firstname">{{ user_firstname }}</p>
-        <p class="lastname">{{ user_lastname }}</p>
+        <p class="firstname">{{ user_firstname }} - </p> 
+
+        <p class="lastname"> - {{ user_lastname }}</p>
+        
     </div>
        
     <div class="userImage">
@@ -15,12 +17,14 @@
             
     <div class="userDescription">
         <p class="description" > {{ user_description }}</p>
+        <p class="connectionMessage"> {{ connectionMessage }}</p>
     </div>
             
+    
     <div class="userButtons">
             
         <button mat-button (click)="previous()" >Previous</button>
-        <button mat-button (click)="connect()">Connect!</button> 
+        <button mat-button (click)="connect()">Connect</button> 
         <button mat-button (click)="next()">Next</button>
 
     </div>

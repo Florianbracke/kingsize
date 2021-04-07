@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient,HttpClientModule } from '@angular/common/http'
 import { user } from '../controllers/user';
 import { Observable } from 'rxjs';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,21 +11,25 @@ import { Observable } from 'rxjs';
 
 export class ApiService {
 
+  headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' };
+
   private _url:string = 'http://localhost:3000/';
-  private _urlUpdate:string= 'http://localhost:3000/login'
 
-  constructor(private http: HttpClient){}
+  private _urlNewUserProfile:string= 'http://localhost:3000/login/'
+
+  constructor(private http: HttpClient,  ){}
   
-   getData(): Observable<user>  {
-   
-      return this.http.get<user>(this._url);
+  postData = {
+    email: "123",
+    password: '321'
+  };
 
-    }
-
-    updateData(): Observable<user> {
-      return this.http.get<user>(this._url);
-    }
+  getData(): Observable<user>  {
+    return this.http.get<user>(this._url);
+  }
     
+  NewUserProfileData(): Observable<user> {
+    return this.http.post<any>('http://localhost:3000/login', this.postData);
+  }
 
-    
 }

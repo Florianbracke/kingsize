@@ -5,19 +5,22 @@
         <hr class="horizontal-hr">
         <div class="formcontainer">
             <div class="formfields">
+                <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" >
 
-                    <mat-form-field appearance="fill">
+                    <mat-form-field appearance="fill" required>
                         <mat-label>Fill in email</mat-label>
-                        <input matInput type='email'> <mat-icon matSuffix>email</mat-icon>
+                        <input matInput formControlName="email" required><mat-icon matSuffix>email</mat-icon> 
                     </mat-form-field>
 
-                    <mat-form-field appearance="fill">
+                    <mat-form-field appearance="fill" required>
                         <mat-label>Fill in password</mat-label>
-                        <input matInput type='password'> <mat-icon matSuffix>lock</mat-icon>
+                        <input matInput type='password' formControlName="password" required> <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
                     
-                <button mat-raised-button color="primary" (click)="onSubmit()" routerLink="/Matches">sign-in 
+                <button type="button" mat-raised-button color="primary" routerLink='/Matches'>sign-in 
                     <mat-icon [ngStyle]="{'color':'lightgreen'}">person_outline</mat-icon> </button>
+        
+                </form> 
 
             </div>
         </div>
@@ -32,30 +35,19 @@
         <div class="formcontainer">
             <div class="formfields">
 
-                <form (ngSubmit)="onSubmit()">
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
 
                     <mat-form-field appearance="fill" required>
                         <mat-label>Fill in email</mat-label>
-                        <input matInput> <mat-icon matSuffix>email</mat-icon> 
+                        <input matInput  formControlName="email_signUp" required value="789">  <mat-icon matSuffix>email</mat-icon> 
                     </mat-form-field>
 
                     <mat-form-field appearance="fill" required>
                         <mat-label>Fill in password</mat-label>
-                        <input matInput > <mat-icon matSuffix>lock</mat-icon>
+                        <input matInput type='password' formControlName="password_signUp" required value="789"> <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
-<!--                     
-                    <mat-form-field appearance="fill">
-                        <mat-label>confirm password</mat-label>
-                        <input matInput formControlName='confirmPassword'> <mat-icon matSuffix>password</mat-icon>
-                    </mat-form-field> -->
-
-                    <br><br><label>Are you a dog owner or dog walker?: </label><br>
-                    <mat-radio-group  >
-                        <mat-radio-button value="walker">dog walker</mat-radio-button><br>
-                        <mat-radio-button value="owner">dog owner</mat-radio-button>
-                    </mat-radio-group>
-                    <br><br>
-                    <button mat-raised-button color="primary">sign-up <mat-icon >check</mat-icon> </button>
+    
+                    <button mat-raised-button color="primary" (click)='newAccount()' >sign-up <mat-icon >check</mat-icon> </button>
 
                 </form> 
 

@@ -31,6 +31,9 @@ export class MatchesComponent {
   user_description:any;
   user_email:any;
 
+  connection:boolean;
+  connectionMessage:string;
+
  //link this variable to database with pictures of the cute dogs and cute people that registered
   numberArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 
@@ -58,6 +61,7 @@ export class MatchesComponent {
   next(){
   this.number++;
   this.userData();
+  this.connectionMessage ='';
   this.imageSource = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
   }
 
@@ -65,12 +69,24 @@ export class MatchesComponent {
 
   this.number--;
   this.userData();
+  this.connectionMessage ='';
   this.imageSource = `https://picsum.photos/id/${this.numberArray[this.number]}/900/500`;
   }
 
 
   connect(){
-    alert("idk man, you kinda ugly")
+    this.connection = true;
+    if (this.connection) {
+     
+            this.connectionMessage = "You send this user a connection request!"
+            this.connection = false;
+            console.log('dsa')
+         
+    } else {
+      this.connectionMessage ='';
+    }
+    
+   
   }
 
 }
