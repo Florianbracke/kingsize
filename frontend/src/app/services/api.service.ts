@@ -18,11 +18,6 @@ export class ApiService {
   private _urlNewUserProfile:string= 'http://localhost:3000/login/'
 
   constructor(private http: HttpClient,  ){}
-  
-  postData = {
-    email: "123",
-    password: '321'
-  };
 
   getData(): Observable<user>  {
     return this.http.get<user>(this._url);

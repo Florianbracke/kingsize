@@ -12,13 +12,13 @@ import { GeolocationService } from '../services/geolocation.service';
   styleUrls: ['./login.component.css'],
 })
 
-export class LoginComponent {
-  
+export class LoginComponent { 
+
   email_signUp:string;
   password_signUp:string;
 
-  email: string ='';
-  password:string ='';
+  email: string;
+  password:string;
   
   signInForm = this.fb.group({
     email : ['', Validators.required],
@@ -48,10 +48,17 @@ newAccount() {
 }
 
 emailVerification(){
-  return this.http.get<any>('http://localhost:3000/Email', this.signInForm.value,).subscribe(data => {
-    console.log(this.signUpForm.value)
+
+   this.http.post<any>('http://localhost:3000/Email', this.signInForm.value,).subscribe(data => {
+    
+      console.log(data)
+
+      if (data.length == 0 ) {
+        
+        alert('please use a valid email adress and password, Or sign up first!')
+
+      } 
     })
-  
 }
  
   

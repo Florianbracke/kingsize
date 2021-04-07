@@ -2,6 +2,7 @@ const cors = require('cors')
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
+//const bp = require('body-parser')
 
 let corsOptions = {
    origin: true,
@@ -20,9 +21,11 @@ const pool= mysql.createPool({
 })
 
 app.use(express.json());
-app.use(express.urlencoded({
-      extended: true
-}));
+app.use(express.urlencoded({ extended: true}));
+
+//app.use(bp.json())
+//app.use(bp.urlencoded({ extended: true }))
+
   
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -40,8 +43,6 @@ app.use(cors(corsOptions))
 app.listen(3000, () => {
     console.log('Server started!' )
 });
-
-  
 
   app.get('/', (req, res) => { 
       pool.getConnection((error,connection) => {
@@ -63,40 +64,44 @@ app.listen(3000, () => {
               console.log('data are:', rows)
               
           })
+          connection.release(function(err) {
+            if (err) {
+              return console.log('error:' + err.message);
+            }
+            console.log('Close the database connection.');
+          });
       })
-  })
+})
 
-app.get('/Email', (req, res) => {
+app.post('/Email', (req, res) => {
+
     pool.getConnection((error,connection) => {
 
-        if (error) {
-            
-              throw error
-          }
-          console.log(req.body.email_signIp)
-        connection.query('SELECT * FROM users WHERE email = ?;', [req.body.email_signIp],(error, rows) => {
+    if (error) {throw error}
+ 
+  connection.query('SELECT * from user WHERE email = ?', [req.body.email], (error, rows) => {
 
-            connection.release()
-            console.log(req.body.email_signIp)
+      connection.release()
+    
             if (!error) {
                 
-                res.send(data)
-
+                res.send(rows)
+                console.log(rows)
             } else {
-                console.log(error)
+                
                 res.status(500).send({ error: "Something failed!" });
                 return;
                 
             }
         })
+        
     })
 })
  
-
   app.post('/login', (req, res) => { 
 
     pool.getConnection((error,connection) => {
-
+        
         if (error) {throw error}
 
         connection.query("INSERT INTO user ( `email`, `password`) VALUES ( ?, ?);",[req.body.email_signUp, req.body.password_signUp], (error, data) => {
@@ -105,7 +110,7 @@ app.get('/Email', (req, res) => {
 
             if (!error) {
                 
-                res.send(data)
+                //res.send(data)
 
             } else {
                 
@@ -116,38 +121,3 @@ app.get('/Email', (req, res) => {
         })
     })
 })
- 
-// app.route('/api/dogs').get((req,res) => {
-//     res.send({
-//         dogs: [{name: 'charlie'}, {name: 'lilly'}],
-//     })
-// });
-
-// app.route('/:name').get((req,res) => {
-//     const requestedDogName = req.params['name'];
-//     res.send({ name: requestedDogName});
-// });
-
-// //sending a new object to an endpoint (to insert a new dog into the database)
-
-// const bodyParser = require('body-parser');
-
-// app.use(bodyParser.json());
-
-// app.route('api/dogs').post((req,res) => {
-//     res.send(201, req.body);
-// });
-
-// //changing an object at an endpoint
-
-// app.route('/api/dogs/:name').put((req, res) => {
-//     res.send(200, req.body)
-// });
-
-// //deleting an object at an endpoint
-
-// app.route('/api/dogs/:name').delete((req, res) => {
-//     res.sendStatus(204)
-// });
-
-
