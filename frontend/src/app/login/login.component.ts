@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
-
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../services/api.service';
 import { GeolocationService } from '../services/geolocation.service';
 
@@ -30,7 +30,7 @@ export class LoginComponent {
     password_signUp : ['', Validators.required],
     })
 
-constructor (private fb: FormBuilder,private apiService: ApiService) {
+constructor (private fb: FormBuilder,private apiService: ApiService,private http: HttpClient) {
   
 }
 
@@ -40,17 +40,19 @@ onSubmit() {
    //console.warn(this.signInForm.value);
 }
 
+
 newAccount() {
-
- return this.apiService.NewUserProfileData().subscribe(data => {
-console.log(data)
-    // this.email_signUp= data.email;
-
-    // this.password_signUp= data.password;
-
+  return this.http.post<any>('http://localhost:3000/login', this.signUpForm.value,).subscribe(data => {
+  console.log(this.signUpForm.value)
   })
 }
 
+emailVerification(){
+  return this.http.get<any>('http://localhost:3000/Email', this.signInForm.value,).subscribe(data => {
+    console.log(this.signUpForm.value)
+    })
+  
+}
  
   
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpClientModule } from '@angular/common/http'
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { user } from '../controllers/user';
 import { Observable } from 'rxjs';
 
@@ -27,9 +27,11 @@ export class ApiService {
   getData(): Observable<user>  {
     return this.http.get<user>(this._url);
   }
-    
-  NewUserProfileData(): Observable<user> {
-    return this.http.post<any>('http://localhost:3000/login', this.postData);
-  }
+    // !!this function is in login component but should end up here -> cant reach data without circular dependencies
+  // NewUserProfileData(): Observable<user> {
+  //   return this.http.post<any>('http://localhost:3000/login', this.postData);
+  // }
+
+ 
 
 }

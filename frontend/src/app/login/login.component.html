@@ -12,13 +12,18 @@
                         <input matInput formControlName="email" required><mat-icon matSuffix>email</mat-icon> 
                     </mat-form-field>
 
+                    <br>
+
                     <mat-form-field appearance="fill" required>
                         <mat-label>Fill in password</mat-label>
                         <input matInput type='password' formControlName="password" required> <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
-                    
-                <button type="button" mat-raised-button color="primary" routerLink='/Matches'>sign-in 
-                    <mat-icon [ngStyle]="{'color':'lightgreen'}">person_outline</mat-icon> </button>
+
+                    <br>
+
+                    <button type="button" mat-raised-button color="primary" (click)='emailVerification()'>
+                        sign-in <mat-icon [ngStyle]="{'color':'lightgreen'}">person_outline</mat-icon> 
+                    </button>
         
                 </form> 
 
@@ -39,15 +44,17 @@
 
                     <mat-form-field appearance="fill" required>
                         <mat-label>Fill in email</mat-label>
-                        <input matInput  formControlName="email_signUp" required value="789">  <mat-icon matSuffix>email</mat-icon> 
+                        <input matInput formControlName="email_signUp" required >  <mat-icon matSuffix>email</mat-icon> 
                     </mat-form-field>
-
+                    <br>
                     <mat-form-field appearance="fill" required>
                         <mat-label>Fill in password</mat-label>
-                        <input matInput type='password' formControlName="password_signUp" required value="789"> <mat-icon matSuffix>lock</mat-icon>
+                        <input matInput type='password' formControlName="password_signUp" required > <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
-    
-                    <button mat-raised-button color="primary" (click)='newAccount()' >sign-up <mat-icon >check</mat-icon> </button>
+
+                    <br>
+                    
+                    <button mat-raised-button color="primary" routerLink='/Matches' (click)='newAccount()' >sign-up <mat-icon >check</mat-icon> </button>
 
                 </form> 
 

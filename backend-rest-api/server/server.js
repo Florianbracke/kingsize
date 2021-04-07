@@ -3,6 +3,13 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 
+let corsOptions = {
+   origin: true,
+   methods: ["GET","POST"],
+   credentials: true,
+   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+ }
+
 const pool= mysql.createPool({
     connectionLimit :   10,
     host            :   'localhost',
@@ -12,35 +19,29 @@ const pool= mysql.createPool({
     port            :   '3307'
 })
 
- let corsOptions = {
-   origin: true,
-   methods: ["GET","POST"],
-   credentials: true,
-   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
- }
-
 app.use(express.json());
-
 app.use(express.urlencoded({
       extended: true
 }));
   
- app.use((req, res, next) => {
-     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3300");
-     res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
-     res.header(
-         "Access-Control-Allow-Headers",
-         "Origin, X-Requested-With, Content-Type, Accept"
-     );
-     next();
- });
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+    res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+});
 
- app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 app.listen(3000, () => {
     console.log('Server started!' )
-  });
+});
+
+  
 
   app.get('/', (req, res) => { 
       pool.getConnection((error,connection) => {
@@ -65,7 +66,31 @@ app.listen(3000, () => {
       })
   })
 
+app.get('/Email', (req, res) => {
+    pool.getConnection((error,connection) => {
 
+        if (error) {
+            
+              throw error
+          }
+          console.log(req.body.email_signIp)
+        connection.query('SELECT * FROM users WHERE email = ?;', [req.body.email_signIp],(error, rows) => {
+
+            connection.release()
+            console.log(req.body.email_signIp)
+            if (!error) {
+                
+                res.send(data)
+
+            } else {
+                console.log(error)
+                res.status(500).send({ error: "Something failed!" });
+                return;
+                
+            }
+        })
+    })
+})
  
 
   app.post('/login', (req, res) => { 
@@ -74,25 +99,20 @@ app.listen(3000, () => {
 
         if (error) {throw error}
 
-        //const id = req.body.id;
-        //   const first_name = req.body.first_name;
-        //   const last_name = req.body.last_name;
-        //   const dog_owner = req.body.dog_owner;
-        //   const lat = req.body.lat;
-        //   const lon = req.body.lon;
-        //const email = req.body.email_signUp;
-        //const password = req.body.password_signUp;
+        connection.query("INSERT INTO user ( `email`, `password`) VALUES ( ?, ?);",[req.body.email_signUp, req.body.password_signUp], (error, data) => {
         
-        connection.query("INSERT INTO user ( `email`, `password`) VALUES ( 'qwe123', '123');", (error, data) => {
+            connection.release()
 
-        connection.release()
-        if (!error) {
-            res.send(data)
-        } else {
-            console.log(error)
-        }
-        console.log(data)
+            if (!error) {
+                
+                res.send(data)
 
+            } else {
+                
+                res.status(500).send({ error: "Something failed!" });
+                return;
+                
+            }
         })
     })
 })
