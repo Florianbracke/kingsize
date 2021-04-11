@@ -28,21 +28,24 @@
 }
 .userImage {
      grid-area: userImage;
-    
+     background-color: rgb(219, 219, 255);
     }
 
 .userInfo { 
+    
     grid-area: userInfo; 
-    
-    display: flex;
-   
-    align-items:center;
-    
+    display:flex;
+
+}
+.name{
+    align-self: flex-end;
+    font-size: large;
+    font-weight: bold;
 }
 
 .userDescription { 
     grid-area: userDescription; 
-    
+    background-color: rgb(219, 219, 255);
 }
 
 .userButtons { 
@@ -52,7 +55,8 @@
 
 .userProfileImage {
     object-fit: contain;
-    max-height: 400px;
+   
+    
 }
 
 .description{
@@ -66,9 +70,17 @@ img{
 }
 
 .userContainer {
-    max-width: 500px;;
+    max-width: 700px;
 }
 
 .connectionMessage{
     color:rgb(25, 201, 25);
 }
+
+.startMessage{
+ 
+    font-size: large;
+    font-weight: bold;
+    
+}
+

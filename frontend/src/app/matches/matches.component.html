@@ -3,10 +3,7 @@
     <div class="leftBanner"></div>
 
     <div class="userInfo">
-        <p class="firstname">{{ user_firstname }} - </p> 
-
-        <p class="lastname"> - {{ user_lastname }}</p>
-        
+        <p class="name">{{ user_firstname }} {{ user_lastname }} {{ distance | number: '1.0-1' }} {{distanceMessage}} </p> 
     </div>
        
     <div class="userImage">
@@ -14,9 +11,10 @@
             <img class="userProfileImage" [src]="imageSource" *ngIf="imageSource"/>
         </div>
     </div>
-            
+ 
     <div class="userDescription">
         <p class="description" > {{ user_description }}</p>
+        <p class="startMessage"> {{ startMessage }} </p>
         <p class="connectionMessage"> {{ connectionMessage }}</p>
     </div>
             
@@ -26,6 +24,7 @@
         <button mat-button (click)="previous()" >Previous</button>
         <button mat-button (click)="connect()">Connect</button> 
         <button mat-button (click)="next()">Next</button>
+      
 
     </div>
     

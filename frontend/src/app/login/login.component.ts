@@ -39,51 +39,53 @@ export class LoginComponent {
     password_signUp : ['', Validators.required],
     })
 
-constructor (private fb: FormBuilder,private apiService: ApiService,private http: HttpClient,  private router:Router) {
-  
-}
+constructor (
+  private fb: FormBuilder,
+  private apiService: ApiService,
+  private http: HttpClient,  
+  private router:Router) 
+  {}
 
+  newAccount() {
+    console.log(this.signInForm.value.password_signUp);
+    if (!this.signUpForm.value.email_signUp || !this.signUpForm.value.password_signUp) {
 
+      this.alertMessage='please use a valid email adress and password!'
 
-newAccount() {
-  console.log(this.signInForm.value.password_signUp);
-  if (!this.signUpForm.value.email_signUp || !this.signUpForm.value.password_signUp) {
-
-    this.alertMessage='please use a valid email adress and password!'
-
-  } else {
-    
-    
-    this.confirmMessage='You succesfully created your profile! Go and Sign-in! :)'
-   
-    this.http.post<any>('http://localhost:3000/login', this.signUpForm.value,).subscribe(data => {console.log(data)})
-    
-  }
-}
-
-emailVerification() {
-  if (!this.signInForm.value.email || !this.signInForm.value.password) {
-
-    this.loginAlertMessage='please use a valid email adress and password, Or sign-up first!'
-
-  } else {
-      this.http.post<any>('http://localhost:3000/Email', this.signInForm.value,).subscribe(data => {
+    } else {
       
-        console.log(data)
-
-        if (data.length == 0 ) {
-          
-          this.loginAlertMessage='please use a valid email adress and password, Or sign-up first!'
-
-        } else {
-          this.router.navigateByUrl('/Matches')
-        }
-      })
+      
+      this.confirmMessage='You succesfully created your profile! Go and Sign-in! :)'
+    
+      this.http.post<any>('http://localhost:3000/login', this.signUpForm.value,).subscribe(data => {console.log(data)})
+      
+    }
   }
 
-}
- 
-  
+  emailVerification() {
+    if (!this.signInForm.value.email || !this.signInForm.value.password) {
 
+      this.loginAlertMessage='please use a valid email adress and password, Or sign-up first!'
+
+    } else {
+        this.http.post<any>('http://localhost:3000/Email', this.signInForm.value,).subscribe(data => {
+        
+          console.log(data)
+
+          if (data.length == 0 ) {
+            
+            this.loginAlertMessage='please use a valid email adress and password, Or sign-up first!'
+
+          } else {
+
+            this.router.navigateByUrl('/Matches')
+            
+          }
+
+        })
+
+    }
+
+  }
 
 } 

@@ -16,13 +16,17 @@ export class GeolocationService {
  }
 
  getUserLocation() {
+
     if (navigator.geolocation) {
+
      navigator.geolocation.getCurrentPosition(position => {
+
          this.lat = position.coords.latitude;
+
          this.lon = position.coords.longitude;
+         
        });
 
-       
  }else {
     console.log("User not allow")
 
