@@ -18,5 +18,7 @@ Stay in touch if you want to find out what this infant app grows up to be. :)
 ## To Do
 
 ## Tools
+Angular
+NodeJS
 
 ## Result

@@ -8,6 +8,8 @@ const mysql = require('mysql');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
+app.use(requireHTTPS);
+
 
 
 const pool= mysql.createPool({
@@ -152,3 +154,21 @@ console.log(req.body.id)
 app.listen(3000, () => {
     console.log('Server started!' )
 });
+
+//for deployment app
+
+function requireHTTPS(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+        return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
+}
+
+app.use(express.static('./dist/king-size'));
+app.get('/*', function(req, res) {
+    res.sendFile('index.html', {root: 'dist/king-size/'}
+  );
+  });
+
+app.listen(process.env.PORT || 8080);
