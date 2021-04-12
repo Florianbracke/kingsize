@@ -15,10 +15,22 @@ Or get your dog to meet local people (perhaps single also?) in your area so it c
 Win-win, right?
 
 Stay in touch if you want to find out what this infant app grows up to be. :)  
+
 ## To Do
+- Create an online database instead of local
+- Finish up matching
+- Get a list with all the matches
+- Link the matches to a chatbox
+- Create a calendar so the matches can schedule a walking date
 
 ## Tools
 Angular
+Angular Material
 NodeJS
+Express
+MySQL
 
 ## Result
+https://walkadoggie.herokuapp.com/
+
+Created by Florian Bracke & Fran Andries
